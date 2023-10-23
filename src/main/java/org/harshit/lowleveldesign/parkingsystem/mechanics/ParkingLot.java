@@ -18,12 +18,20 @@ public class ParkingLot {
     private final Map<Vehicle, Ticket> vehicleTicketMap;
     private final Map<Vehicle, ParkingSlot> vehicleParkingSlotMap;
     private double totalAmount;
+    private static ParkingLot instance;
 
-    public ParkingLot() {
+    private ParkingLot() {
         parkingFloors = new ArrayList<>();
         vehicleTicketMap = new HashMap<>();
         vehicleParkingSlotMap = new HashMap<>();
         this.totalAmount = 0.0;
+    }
+
+    public static synchronized ParkingLot getInstance() {
+        if (instance == null) {
+            instance = new ParkingLot();
+        }
+        return instance;
     }
 
     public void addFloor(ParkingFloor parkingFloor) {

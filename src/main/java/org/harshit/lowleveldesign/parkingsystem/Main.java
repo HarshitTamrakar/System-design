@@ -13,7 +13,7 @@ import org.harshit.lowleveldesign.parkingsystem.model.Vehicle;
 public class Main {
 
     public static void main(String[] args) throws InterruptedException {
-        ParkingLot parkingLot = new ParkingLot();
+        ParkingLot parkingLot = ParkingLot.getInstance();
         ParkingFloor groundFloor = new ParkingFloor("Ground floor");
         groundFloor.addParkingSlot(SMALL, new ParkingSlot(SMALL));
         groundFloor.addParkingSlot(SMALL, new ParkingSlot(SMALL));
