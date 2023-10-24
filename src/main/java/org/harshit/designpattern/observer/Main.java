@@ -7,6 +7,11 @@ import org.harshit.designpattern.observer.observer.SmsNotificationObserver;
 
 public class Main {
 
+    // Observer design pattern states, when Observable state is changed or updated then all its
+    // Observers must be notified, best example for this design pattern is to implement notifyMe
+    // on product page of ecommerce websites, when product stock is updated from 0 to some value
+    // then all the subscribed users must be notified.
+
     public static void main(String[] args) {
         IphoneStockObservable iphoneStockObservable = new IphoneStockObservable();
         NotificationObserver user1 =
